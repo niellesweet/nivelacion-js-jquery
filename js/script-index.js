@@ -35,13 +35,15 @@ function renderHighlightedRecipes(recipesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-recipe.html"
 */
+
+/*
 function renderRecipe(recipe) {
 	$(function(printRecipes){
 		$('.list-recipes').append("<a class='item-recipe' href='#''>" + 
   									"<span class='attribution'>" + 
   										"<span class='title-recipe'>" +  recipes.title + "</span>" + 
     									"<span class='metadata-recipe'>" + 
-      										"<span class='author-recipe'>" recipes.source.name + "</span>"+
+      										"<span class='author-recipe'>" + recipes.source.name + "</span>"+
       										"<span class='bookmarks-recipe'>" + 
         										"<span class='icon-bookmark'></span>" +
       										"</span>"+
@@ -54,6 +56,7 @@ function renderRecipe(recipe) {
 }
 
 renderRecipe(recipe);
+*/
 
 /*
 * Función que se encarga de pintar todas las actividades
