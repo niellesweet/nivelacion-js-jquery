@@ -18,7 +18,15 @@ $(function(printNews){
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
+	var arreglo = recipesArray.forEach(function(elementos){
+		var filtrar = elementos.highlighted;
+
+		if(filtrar == true){
+			return renderRecipe();
+		}
+	})
 		console.log('Recipes: ', recipesArray);
+
 }
 
 /*
