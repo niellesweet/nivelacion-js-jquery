@@ -36,10 +36,24 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
+	$(function(printRecipes){
+		$('.list-recipes').append("<a class='item-recipe' href='#''>" + 
+  									"<span class='attribution'>" + 
+  										"<span class='title-recipe'>" +  recipes.title + "</span>" + 
+    									"<span class='metadata-recipe'>" + 
+      										"<span class='author-recipe'>" recipes.source.name + "</span>"+
+      										"<span class='bookmarks-recipe'>" + 
+        										"<span class='icon-bookmark'></span>" +
+      										"</span>"+
+    									"</span>"+
+  									"</span>"+
+									"<img src="URL DE LA IMAGEN" />"+
+								"</a>");
+});
 	console.log('Voy a pintar la receta: ', recipe);
 }
 
-
+renderRecipe(recipe);
 
 /*
 * Función que se encarga de pintar todas las actividades
