@@ -1,11 +1,10 @@
 $(document).ready( function(){
 	$('.js-back').hide(0);
 	$('.js-menu').show(0);
-});
 
-$(document).ready( function(){
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
+
 
 });
 
@@ -18,17 +17,17 @@ $(function(printNews){
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	var arreglo = recipesArray.forEach(function(elementos){
-		var filtrar = elementos.highlighted;
+	var arreglo = recipesArray.filter(function(elementos){
+		return elementos.highlighted;
 
-		if(filtrar == true){
-			return renderRecipe();
-		}
 	})
 		console.log('Recipes: ', recipesArray);
 
-}
+	arreglo.forEach(function(recipes){
+		renderRecipe(recipes);
+	});
 
+}
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
 * marcado el atributo "highlighted" como TRUE
@@ -36,27 +35,13 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 
-/*
-function renderRecipe(recipe) {
-	$(function(printRecipes){
-		$('.list-recipes').append("<a class='item-recipe' href='#''>" + 
-  									"<span class='attribution'>" + 
-  										"<span class='title-recipe'>" +  recipes.title + "</span>" + 
-    									"<span class='metadata-recipe'>" + 
-      										"<span class='author-recipe'>" + recipes.source.name + "</span>"+
-      										"<span class='bookmarks-recipe'>" + 
-        										"<span class='icon-bookmark'></span>" +
-      										"</span>"+
-    									"</span>"+
-  									"</span>"+
-									"<img src="URL DE LA IMAGEN" />"+
-								"</a>");
-});
-	console.log('Voy a pintar la receta: ', recipe);
+function renderRecipe(recipes) {
+	console.log('Voy a pintar la receta: ', recipes);
+	$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">'+ 
+									recipes.title + '</span><span class="metadata-recipe"><span class="author-recipe">'+ 
+									recipes.source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark"></span></span></span></span><img src="img/recipes/320x350/'+ 
+									recipes.name + '.jpg"></a>');
 }
-
-renderRecipe(recipe);
-*/
 
 /*
 * Función que se encarga de pintar todas las actividades
